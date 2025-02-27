@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import React from "react";\
+import \{ BrowserRouter as Router, Route, Routes \} from "react-router-dom";\
+import Home from "./pages/Home";\
+import About from "./pages/About";\
+import Services from "./pages/Services";\
+import Clients from "./pages/Clients";\
+import Blog from "./pages/Blog";\
+import Contact from "./pages/Contact";\
+import Booking from "./pages/Booking";\
+import Shop from "./pages/Shop";\
+import Navbar from "./components/Navbar";\
+import Footer from "./components/Footer";\
+import BookingSystem from "./components/BookingSystem";\
+import ShopPage from "./components/ShopPage";\
+import \{ ThemeProvider \} from "styled-components";\
+import GlobalStyle from "./styles/GlobalStyle";\
+\
+const theme = \{\
+  colors: \{\
+    primary: "#A8DADC",\
+    secondary: "#F1FAEE",\
+    accent: "#457B9D",\
+    text: "#1D3557",\
+    background: "#F1FAEE",\
+  \},\
+  fonts: \{\
+    primary: "Arial, sans-serif",\
+  \},\
+\};\
+\
+function App() \{\
+  return (\
+    <ThemeProvider theme=\{theme\}>\
+      <GlobalStyle />\
+      <Router>\
+        <Navbar />\
+        <Routes>\
+          <Route path="/" element=\{<Home />\} />\
+          <Route path="/about" element=\{<About />\} />\
+          <Route path="/services" element=\{<Services />\} />\
+          <Route path="/clients" element=\{<Clients />\} />\
+          <Route path="/blog" element=\{<Blog />\} />\
+          <Route path="/contact" element=\{<Contact />\} />\
+          <Route path="/booking" element=\{<BookingSystem />\} />\
+          <Route path="/shop" element=\{<ShopPage />\} />\
+        </Routes>\
+        <Footer />\
+      </Router>\
+    </ThemeProvider>\
+  );\
+\}\
+\
+export default App;\
+}
